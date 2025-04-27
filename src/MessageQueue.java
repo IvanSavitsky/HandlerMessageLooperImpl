@@ -4,9 +4,9 @@ public class MessageQueue {
     private final LinkedList<Message> messages = new LinkedList<>();
 
     public void enqueueMessage(Message message) {
-        //synchronized (this) { // хз надо или нет
+        synchronized (this) {
             messages.add(message);
-        //}
+        }
     }
 
     public Message next() {
